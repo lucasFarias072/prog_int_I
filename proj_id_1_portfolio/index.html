@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    a {
+      color: white;
+      text-shadow: 0 0 .2rem white;
+      text-decoration: none;
+    }
+
+    body {
+      background: linear-gradient(7deg, rgba(0, 33, 99, .7), rgba(0, 99, 99, .7), rgba(33, 66, 99, .7));
+      font-family: Georgia;
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      color: rgba(255, 255, 255, .5);
+      text-shadow: 0 0 1rem black;
+    }
+  
+    li {
+      background: #222;
+      border: rgb(222, 222, 25) solid 1.7px;
+      border-radius: .2rem;
+      color: yellow;
+      list-style-position: inside;
+      margin: 0 0 .3rem .5rem;
+      padding: .3rem .7rem;
+      /* text-shadow: 0 0 .5rem yellow; */
+    }
+
+    ul {
+      margin: 1rem 0 0 0;
+    }
+
+    .full-height {
+      min-height: 100vh;
+    }
+    .flex {
+      display: flex;
+    }
+    .column {
+      flex-flow: column wrap;
+    }
+    .row {
+      flex-flow: row wrap;
+    }
+    .going-center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gap-sm {
+      gap: .5rem;
+    }
+    .gap {
+      gap: 1rem;
+    }
+    .gap-md {
+      gap: 2rem;
+    }
+
+    .mb {
+      margin-bottom: 1rem;
+    }
+
+    .mt {
+      margin-top: 1rem;
+    }
+
+    .numb {
+      opacity: .5;
+    }
+
+    .url-item {
+      font-size: 1.3rem;
+    }
+
+    #portfolio-container #portfolio-title {
+      color: rgb(200, 222, 255)
+    }
+
+    #portfolio-container #clickable-area {
+      background: linear-gradient(7deg, rgba(10, 10, 10, .25), rgba(0, 99, 99, .25), rgba(99, 99, 99, .25));
+      border-radius: .2rem;
+      padding: 1rem 2rem;
+      width: 40rem;
+    }
+
+    #portfolio-container #clickable-area:hover {
+      background: linear-gradient(7deg, rgba(10, 10, 10, .33), rgba(0, 99, 99, .33), rgba(99, 99, 99, .33));
+    }
+
+    #portfolio-container #person-a, #portfolio-container #person-b {
+      border-radius: 50%;
+      height: 10rem;
+      width: 10rem;
+      /* opacity: .5; */
+    }
+
+    #portfolio-container #person-a:hover, #portfolio-container #person-b:hover {
+      box-shadow: 0 0 1rem #111;
+      opacity: 1;
+    }
+
+    .smooth {
+      transition: all linear .5s;
+    }
+
+    .view {
+      background: linear-gradient(rgb(33, 66, 99), #222);
+      border-radius: .5rem;
+      cursor: pointer;
+      padding: .5rem 3rem;
+      font-size: 2rem;
+    }
+
+    .zoom-in:hover {
+      transform: scale(1.1);
+    }
+
+    .field {
+      border: #222 solid 1.5px;
+      border-radius: .2rem;
+      cursor: pointer;
+      margin: .3rem;
+      padding: 1rem;
+      height: 4.5rem;
+      width: 7rem;
+      transition: linear .5s;
+    }
+
+    .field:hover {
+      transform: scale(1.1);
+    }
+
+    .field-female {
+      background: linear-gradient(-7deg, rgb(133, 66, 99), #333);
+      color: white;
+    }
+
+    .field-female:hover {
+      background: linear-gradient(-7deg, #333, rgb(133, 66, 99));
+    }
+
+    .field-male {
+      background: linear-gradient(-7deg, rgb(33, 66, 99), #333);
+      color: white;
+    }
+
+    .field-male:hover {
+      background: linear-gradient(-7deg, #333, rgb(33, 66, 99));
+    }
+
+    .vanished {
+      display: none;
+    }
+
+    #progress-bar-left, #progress-bar-right {
+      width: 100%;
+    }
+
+    .bar {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 0 .2rem white;
+      height: 1rem;
+      width: 40%;
+      text-align: center;
+    }
+
+    .bar-within {
+      background: transparent;
+      border: transparent solid 1px;
+      border-radius: 1.5rem;
+      height: 1rem;
+      width: 0%;
+    }
+
+    @media (max-width: 700px) {
+      #portfolio-container #clickable-area {
+        width: 30rem;
+      }
+    }
+    @media (max-width: 600px) {
+      #portfolio-container #person-a, #portfolio-container #person-b {
+        height: 6rem;
+        width: 6rem;
+      }
+      #portfolio-container #clickable-area {
+        width: 25rem;
+      }
+    }
+    @media (max-width: 500px) {
+      #portfolio-container #person-a, #portfolio-container #person-b {
+        height: 5rem;
+        width: 5rem;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <main>
+    <div id="portfolio-container" class="flex column going-center full-height">
+      <h2 id="portfolio-title" class="mb">Portfólios</h2>
+      
+      <div id="clickable-area" class="flex row going-center gap-md">
+        
+        <div id="lucas-container" class="container flex column going-center">
+          <h3 class="person-name mb">Lucas Farias</h3>
+          <img id="person-a" class="zoom-in smooth numb" src="./assets/lucas.jpg" alt="imagem da pessoa Lucas">
+          <p class="view mt field-male">👁️‍🗨️</p>
+
+          <div id="lucas-menu" class="menu vanished">
+            <div class="flex row going-center gap-sm">
+              <p class="field field-male">soft-skills</p>
+              <p class="field field-male">hard-skills</p>
+            </div>
+            <div class="flex row going-center gap-sm">
+              <p class="field field-male">projetos publicados</p>
+              <p class="field field-male">sobre</p>
+            </div>
+          </div>
+
+          <div id="progress-bar-left"></div>
+
+          <div class="field-answer vanished">
+            <ul class="flex row going-center">
+              <li>criatividade</li>
+              <li>empatia</li>
+              <li>resiliência</li>
+            </ul>
+          </div>
+          <div class="field-answer vanished">
+            <ul>
+              <li>front-end: html, css, js, git/github, react</li>
+              <li>back-end: django, express, consumo APIs, Prisma</li>
+            </ul>
+          </div>
+          <div class="field-answer vanished">
+            <ul>
+              <li>🔗 Rocket Rectangle (vanilla javascript): <a href="https://foguete-retangulo-jogo.vercel.app/" target="_blank"><span class="url-item">👁️</span></a></li>
+              <li>🔗 Pizzaria Pizzitalia (vanilla javascript + django): <a href="https://lucasprog.pythonanywhere.com/" target="_blank"><span class="url-item">👁️</span></a></li>
+            </ul>
+          </div>
+          <div class="field-answer vanished">
+            <ul>
+              <li><span class="url-item">📌🌍</span> Brasileiro</li>
+              <li><span class="url-item">🌍🏠</span> Teresina/PI</li>
+              <li><span class="url-item">👨🏻‍🎓📚</span> Letras Inglês / ADS (andamento)</li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <div id="lays-container" class="container flex column going-center">
+          <h3 class="person-name mb">Lays Emanuelly</h3>
+          <img id="person-b" class="zoom-in smooth numb" src="./assets/lays.png" alt="imagem da pessoa Lays">
+          <p class="view mt field-female">👁️‍🗨️</p>
+          
+          <div id="lays-menu" class="menu vanished">
+            <div class="flex row going-center gap-sm">
+              <p class="field field-female">soft-skills</p>
+              <p class="field field-female">hard-skills</p>
+            </div>
+            <div class="flex row going-center gap-sm">
+              <p class="field field-female">projetos publicados</p>
+              <p class="field field-female">sobre</p>
+            </div>
+          </div>
+
+          <div id="progress-bar-right"></div>
+
+          <div class="field-answer vanished">
+            <ul class="flex row going-center">
+              <li>inserir...</li>
+            </ul>
+          </div>
+          <div class="field-answer vanished">
+            <ul>
+              <li>front-end: ...</li>
+              <li>back-end: ...</li>
+            </ul>
+          </div>
+          <div class="field-answer vanished">
+            <ul>
+              <li>🔗 Nome: <a href="#" target="_blank"><span class="url-item">👁️</span></a></li>
+              </ul>
+          </div>
+          <div class="field-answer vanished">
+            <ul>
+              <li><span class="url-item">📌🌍</span> Brasileiro</li>
+              <li><span class="url-item">🌍🏠</span> Teresina/PI</li>
+              <li><span class="url-item">👨🏻‍🎓📚</span> ...</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+
+    const getInt = (tail, head) => {
+      return Math.floor(Math.random() * (head - tail) + tail)
+    }
+    
+    const getFloat = (tail, head) => {
+      return parseFloat(`${Math.random() * (head - tail) + tail}`.substring(0, 4))
+    }
+
+    const getColor = (tail, head) => {
+      const pallet = 'B.C.D.F.0.1.2.3.4.5.6.7.8.9.A.E'.split('.')
+      let color = '#'
+      for(let i = 0; i <= 5; i++) {
+        color += pallet[getInt(0, pallet.length)]
+      }
+      return color
+    }
+
+    const createBar = () => {
+      const bar = document.createElement('div')
+      const barWithin = document.createElement('p')
+      bar.classList.add('bar')
+      barWithin.classList.add('bar-within')
+      bar.appendChild(barWithin)
+      return bar
+    }
+
+    const createBarProgress = () => {
+      const progressVals = []
+      let tail = 0
+      const head = 100
+      while (tail < head) {
+        const increment = getFloat(1, 10)
+        if (tail + increment < head) {
+          progressVals.push(tail + increment)
+          tail += increment
+        } else {
+          progressVals.push(100)
+          tail = 100
+        }
+      }
+      console.log(progressVals)
+      return progressVals
+    }
+    
+    const buildBarProgress = (progressArray, htmlEl, itsFather) => {
+      const color = getColor()
+      htmlEl.style.background = color
+      htmlEl.style.color = 'white'
+      htmlEl.style.boxShadow = `0 0 1rem ${color}`
+      
+      let counter = 0
+      const barProgress = setInterval(() => {
+        htmlEl.style.width = `${progressArray[counter].toFixed(2)}%`
+        htmlEl.textContent = `${progressArray[counter].toFixed(2)}%`
+        counter++
+        if (counter === progressArray.length) {
+          htmlEl.textContent = '100%'
+          setTimeout(() => {
+            itsFather.innerHTML = ''
+          }, 500)
+          clearInterval(barProgress)
+        }
+      }, 50)
+    }
+
+    const stdBackgroundColor = 'linear-gradient(7deg, rgba(10, 10, 10, .7), rgba(0, 99, 99, .7), rgba(99, 99, 99, .7))'
+    const stdContainerColor = 'linear-gradient(7deg, rgba(10, 10, 10, .25), rgba(0, 99, 99, .25), rgba(99, 99, 99, .25))'
+
+    const containers = [...document.querySelectorAll('.container')]
+    const views = [...document.querySelectorAll('.view')]
+    const menus = [...document.querySelectorAll('.menu')]
+    const lucasMenu = document.getElementById('lucas-menu')
+    const laysMenu = document.getElementById('lays-menu')
+    const fields = [...document.querySelectorAll('.field')]
+    const fieldAnswers = [...document.querySelectorAll('.field-answer')]
+
+    const clickableArea = document.getElementById('clickable-area')
+    const lucas = document.getElementById('person-a')
+    const lays = document.getElementById('person-b')
+    const barShelter = document.getElementById('bar-shelter')
+
+    const progressBarLeft = document.getElementById('progress-bar-left')
+    const progressBarRight = document.getElementById('progress-bar-right')
+
+    let personOnSpotlight
+
+    const colors = {
+      white: 'rgb(255, 255, 255)',
+      yellow: 'rgb(222, 222, 25)',
+    }
+    
+    // click on the eye
+    views.forEach((view, pos) => {
+      view.addEventListener('click', () => {
+        
+        setTimeout(() => {
+          // Show person's menu
+          menus[pos].getAttribute('class').includes('vanished')
+          ? menus[pos].classList.remove('vanished')
+          : menus[pos].classList.add('vanished')
+
+          if (pos === 0) {
+            clickableArea.style.background = 'linear-gradient(-7deg, rgb(33, 66, 99), #333)'
+            document.body.style.background = 'linear-gradient(-7deg, #333, rgb(33, 66, 99), rgba(255, 70, 0, .7))'
+          } else {
+            clickableArea.style.background = 'linear-gradient(-7deg, rgb(133, 66, 99), #333)'
+            document.body.style.background = 'linear-gradient(-7deg, #333, rgb(133, 66, 99), rgba(255, 70, 0, .7))'
+          }
+          
+          // hide person's container that was not clicked
+          containers[pos === 1 ? 0 : 1].getAttribute('class').includes('vanished') 
+          ? containers[pos === 1 ? 0 : 1].classList.remove('vanished')
+          : containers[pos === 1 ? 0 : 1].classList.add('vanished')
+
+          containers[pos].getAttribute('id') === 'lucas-container'
+          ? personOnSpotlight = 'lucas'
+          : personOnSpotlight = 'lays'
+
+          view.textContent === '👁️‍🗨️' 
+          ? view.textContent = '↩' 
+          : view.textContent = '👁️‍🗨️'
+
+          view.textContent === '↩'
+          ? lucas.classList.remove('numb')
+          : lays.classList.remove('numb')
+
+          if (view.textContent === '👁️‍🗨️') {
+            clickableArea.style.background = stdContainerColor
+            document.body.style.background = stdBackgroundColor
+            lucas.classList.add('numb')
+            lays.classList.add('numb')
+          }
+        }, 500)
+        
+      })
+    })
+
+    // click on field after the eye
+    fields.forEach((field, pos) => {
+      field.addEventListener('click', () => {
+
+        window.getComputedStyle(field).color === colors.white 
+        ? field.style.color = colors.yellow
+        : field.style.color = colors.white
+
+        setTimeout(() => {
+          const newBar = createBar()
+          personOnSpotlight === 'lucas' ? progressBarLeft.appendChild(newBar) : progressBarRight.appendChild(newBar)
+          const progressBarArray = createBarProgress()
+          personOnSpotlight === 'lucas' 
+          ? buildBarProgress(progressBarArray, newBar, progressBarLeft)
+          : buildBarProgress(progressBarArray, newBar, progressBarRight)
+          
+          setTimeout(() => {
+            !fieldAnswers[pos].getAttribute('class').includes('vanished')
+            ? fieldAnswers[pos].classList.add('vanished')
+            : fieldAnswers[pos].classList.remove('vanished')
+          }, 1500)
+        }, 1200)
+
+          
+      })
+    })
+    
+  </script>
+
+</body>
+</html>
