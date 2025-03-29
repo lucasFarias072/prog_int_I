@@ -19,7 +19,7 @@
     }
 
     body {
-      background: linear-gradient(7deg, rgba(0, 33, 99, .7), rgba(0, 99, 99, .7), rgba(33, 66, 99, .7));
+      background: linear-gradient(7deg, rgb(0, 33, 99), rgb(0, 99, 99), rgb(33, 66, 99));
       font-family: Georgia;
       letter-spacing: 2px;
     }
@@ -37,6 +37,7 @@
       list-style-position: inside;
       margin: 0 0 .3rem .5rem;
       padding: .3rem .7rem;
+      transition: linear 1s;
       /* text-shadow: 0 0 .5rem yellow; */
     }
 
@@ -83,23 +84,32 @@
       opacity: .5;
     }
 
+    .person-name {
+      color: white;
+      text-shadow: 0 0 .2rem yellow;
+      /* color: white; */
+      /* text-shadow: 0 0 1rem rgb(0, 99, 99); */
+    }
+
     .url-item {
-      font-size: 1.3rem;
+      /* font-size: 1.3rem; */
+      width: 9rem;
     }
 
     #portfolio-container #portfolio-title {
-      color: rgb(200, 222, 255)
+      color: rgb(0, 99, 99);
+      font-size: 3.5rem;
+      letter-spacing: 10px;
+      text-shadow: 0 0 .2rem white;
+      transition: linear .5s;
     }
 
     #portfolio-container #clickable-area {
-      background: linear-gradient(7deg, rgba(10, 10, 10, .25), rgba(0, 99, 99, .25), rgba(99, 99, 99, .25));
-      border-radius: .2rem;
-      padding: 1rem 2rem;
+      background: linear-gradient(7deg, rgb(10, 10, 10), rgb(0, 99, 99), rgb(99, 99, 99));
+      border-radius: .4rem;
+      padding: 1.5rem 0;
       width: 40rem;
-    }
-
-    #portfolio-container #clickable-area:hover {
-      background: linear-gradient(7deg, rgba(10, 10, 10, .33), rgba(0, 99, 99, .33), rgba(99, 99, 99, .33));
+      transition: linear .5s;
     }
 
     #portfolio-container #person-a, #portfolio-container #person-b {
@@ -133,6 +143,7 @@
     .field {
       border: #222 solid 1.5px;
       border-radius: .2rem;
+      box-shadow: 0 0 .3rem #222;
       cursor: pointer;
       margin: .3rem;
       padding: 1rem;
@@ -147,6 +158,7 @@
 
     .field-female {
       background: linear-gradient(-7deg, rgb(133, 66, 99), #333);
+      box-shadow: 0 0 .3rem #222;
       color: white;
     }
 
@@ -156,6 +168,7 @@
 
     .field-male {
       background: linear-gradient(-7deg, rgb(33, 66, 99), #333);
+      box-shadow: 0 0 .3rem #222;
       color: white;
     }
 
@@ -165,6 +178,10 @@
 
     .vanished {
       display: none;
+    }
+
+    .shades {
+      opacity: 0;
     }
 
     #progress-bar-left, #progress-bar-right {
@@ -199,10 +216,13 @@
         width: 6rem;
       }
       #portfolio-container #clickable-area {
-        width: 25rem;
+        width: 29rem;
       }
     }
     @media (max-width: 500px) {
+      #portfolio-container #clickable-area {
+        width: 28rem;
+      }
       #portfolio-container #person-a, #portfolio-container #person-b {
         height: 5rem;
         width: 5rem;
@@ -214,14 +234,14 @@
 <body>
   <main>
     <div id="portfolio-container" class="flex column going-center full-height">
-      <h2 id="portfolio-title" class="mb">Portfólios</h2>
+      <h1 id="portfolio-title" class="mb">Portfólios</h1>
       
       <div id="clickable-area" class="flex row going-center gap-md">
         
         <div id="lucas-container" class="container flex column going-center">
           <h3 class="person-name mb">Lucas Farias</h3>
           <img id="person-a" class="zoom-in smooth numb" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lucas.jpg" alt="imagem da pessoa Lucas">
-          <p class="view mt field-male">👁️‍🗨️</p>
+          <p class="view mt mb field-male">👁️‍🗨️</p>
 
           <div id="lucas-menu" class="menu vanished">
             <div class="flex row going-center gap-sm">
@@ -234,32 +254,36 @@
             </div>
           </div>
 
-          <div id="progress-bar-left"></div>
+          <div id="progress-bar-left" class="bar-item mt"></div>
 
-          <div class="field-answer vanished">
+          <div class="field-answer soft-skills vanished">
             <ul class="flex row going-center">
+              <li>aprendizado contínuo</li>
               <li>criatividade</li>
+              <li>curiosidade</li>
               <li>empatia</li>
               <li>resiliência</li>
             </ul>
           </div>
-          <div class="field-answer vanished">
+          <div class="field-answer hard-skills vanished">
             <ul>
               <li>front-end: html, css, js, git/github, react</li>
-              <li>back-end: django, express, consumo APIs, Prisma</li>
+              <li>back-end: django, express, consumo APIs</li>
             </ul>
           </div>
-          <div class="field-answer vanished">
+          <div class="field-answer projects vanished">
             <ul>
               <li>🔗 Rocket Rectangle (vanilla javascript): <a href="https://foguete-retangulo-jogo.vercel.app/" target="_blank"><span class="url-item">👁️</span></a></li>
               <li>🔗 Pizzaria Pizzitalia (vanilla javascript + django): <a href="https://lucasprog.pythonanywhere.com/" target="_blank"><span class="url-item">👁️</span></a></li>
             </ul>
           </div>
-          <div class="field-answer vanished">
+          <div class="field-answer about vanished">
             <ul>
-              <li><span class="url-item">📌🌍</span> Brasileiro</li>
-              <li><span class="url-item">🌍🏠</span> Teresina/PI</li>
-              <li><span class="url-item">👨🏻‍🎓📚</span> Letras Inglês / ADS (andamento)</li>
+              <li>📌🌍 Brasileiro</li>
+              <li>🌍🏠 Teresina/PI</li>
+              <li>👨🏻‍🎓📚 Letras Inglês</li>
+              <li>👨🏻‍🎓📚 ADS (andamento)</li>
+              <li>💻 Desenvolvimento Front-end</li>
             </ul>
           </div>
           
@@ -268,7 +292,7 @@
         <div id="lays-container" class="container flex column going-center">
           <h3 class="person-name mb">Lays Emanuelly</h3>
           <img id="person-b" class="zoom-in smooth numb" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lays.png" alt="imagem da pessoa Lays">
-          <p class="view mt field-female">👁️‍🗨️</p>
+          <p class="view mt mb field-female">👁️‍🗨️</p>
           
           <div id="lays-menu" class="menu vanished">
             <div class="flex row going-center gap-sm">
@@ -281,36 +305,35 @@
             </div>
           </div>
 
-          <div id="progress-bar-right"></div>
+          <div id="progress-bar-right" class="bar-item mt"></div>
 
-          <div class="field-answer vanished">
+          <div class="field-answer soft-skills vanished">
             <ul class="flex row going-center">
               <li>inserir...</li>
             </ul>
           </div>
-          <div class="field-answer vanished">
+          <div class="field-answer hard-skills vanished">
             <ul>
               <li>front-end: ...</li>
               <li>back-end: ...</li>
             </ul>
           </div>
-          <div class="field-answer vanished">
+          <div class="field-answer projects vanished">
             <ul>
               <li>🔗 Nome: <a href="#" target="_blank"><span class="url-item">👁️</span></a></li>
               </ul>
           </div>
-          <div class="field-answer vanished">
+          <div class="field-answer about vanished">
             <ul>
-              <li><span class="url-item">📌🌍</span> Brasileiro</li>
-              <li><span class="url-item">🌍🏠</span> Teresina/PI</li>
-              <li><span class="url-item">👨🏻‍🎓📚</span> ...</li>
+              <li>📌🌍 Brasileiro</li>
+              <li>🌍🏠 Teresina/PI</li>
+              <li>👨🏻‍🎓📚 ...</li>
             </ul>
           </div>
         </div>
 
       </div>
     </div>
-
   </main>
 
   <script>
@@ -380,8 +403,61 @@
       }, 50)
     }
 
-    const stdBackgroundColor = 'linear-gradient(7deg, rgba(10, 10, 10, .7), rgba(0, 99, 99, .7), rgba(99, 99, 99, .7))'
-    const stdContainerColor = 'linear-gradient(7deg, rgba(10, 10, 10, .25), rgba(0, 99, 99, .25), rgba(99, 99, 99, .25))'
+    const selectUserData = (userHtmlTag) => {
+      userHtmlTag.getAttribute('class').includes('vanished')
+      ? userHtmlTag.classList.remove('vanished')
+      : userHtmlTag.classList.add('vanished')
+    }
+
+    const transitionUserTheme = (fatherEl, childEl, person, themes) => {
+      const eachPerson = []
+      for(let person of themes) {eachPerson.push(person.owner)}
+      const personData = themes[eachPerson.indexOf(person)]
+      fatherEl.style.background = personData.bg
+      childEl.style.background = personData.banner
+    }
+
+    const setScreenTransition = (groupOfTags, stateValue) => {
+      for(let tag of groupOfTags) {
+        tag.style.opacity = stateValue
+      }
+    }
+
+    const setPersonOnScreen = (htmlTagId, idValue, reference, valA, valB) => {
+      htmlTagId.getAttribute('id') === idValue ? reference = valA: reference = valB
+      return reference
+    }
+
+    const switchSymbol = (htmlTag, certainValue, symbolA, symbolB) => {
+      htmlTag.textContent === certainValue ? htmlTag.textContent = symbolA : htmlTag.textContent = symbolB
+    }
+
+    const highlightImage = (htmlTriggerTag, certainValue, tagsGroup) => {
+      if (htmlTriggerTag.textContent === certainValue) {
+        for(let el of tagsGroup) {
+          el.classList.remove('numb')
+        }
+      }
+    }
+
+    const highlightField = (htmlTag, certainValue, stdColor, highlightColor) => {
+      window.getComputedStyle(htmlTag).color === certainValue 
+      ? htmlTag.style.color = highlightColor
+      : htmlTag.style.color = stdColor
+    }
+    
+    const decideBarLocation = (certainValue, barsHtmlGroup, possibleValues, barItem) => {
+      barsHtmlGroup[possibleValues.indexOf(certainValue)].appendChild(barItem)
+    }
+
+    const returnIndexTemplate = (htmlTriggerTag, certainValue) => {
+      if (htmlTriggerTag.textContent === certainValue) {
+        clickableArea.style.background = colors.stdContainerBackground
+        document.body.style.background = colors.stdBackground
+        lucas.classList.add('numb')
+        lays.classList.add('numb')
+      }
+    }
 
     const containers = [...document.querySelectorAll('.container')]
     const views = [...document.querySelectorAll('.view')]
@@ -390,64 +466,85 @@
     const laysMenu = document.getElementById('lays-menu')
     const fields = [...document.querySelectorAll('.field')]
     const fieldAnswers = [...document.querySelectorAll('.field-answer')]
+    const bars = [...document.querySelectorAll('.bar-item')]
 
+    const portfolioTitle = document.getElementById('portfolio-title')
     const clickableArea = document.getElementById('clickable-area')
     const lucas = document.getElementById('person-a')
     const lays = document.getElementById('person-b')
-    const barShelter = document.getElementById('bar-shelter')
-
-    const progressBarLeft = document.getElementById('progress-bar-left')
-    const progressBarRight = document.getElementById('progress-bar-right')
 
     let personOnSpotlight
 
     const colors = {
       white: 'rgb(255, 255, 255)',
       yellow: 'rgb(222, 222, 25)',
+      lucasBanner: 'linear-gradient(-7deg, rgb(33, 66, 99), #333)',
+      lucasBackground: 'linear-gradient(-7deg, #333, rgb(33, 66, 99), rgba(255, 70, 0, .7))',
+      laysBanner: 'linear-gradient(-7deg, rgb(133, 66, 99), #333)',
+      laysBackground: 'linear-gradient(-7deg, #333, rgb(133, 66, 99), rgba(255, 70, 0, .7))',
+      stdBackground: 'linear-gradient(7deg, rgb(0, 33, 99), rgb(0, 99, 99), rgb(33, 66, 99))',
+      stdContainerBackground: 'linear-gradient(7deg, rgb(10, 10, 10), rgb(0, 99, 99), rgb(99, 99, 99))'
     }
     
+    const emojis = {
+      eye: '👁️‍🗨️',
+      returnArrow: '↩'
+    }
+
+    const peopleThemes = [
+      {owner: 'lucas', bg: colors.lucasBackground, banner: colors.lucasBanner},
+      {owner: 'lays', bg: colors.laysBackground, banner: colors.laysBanner}
+    ] 
+
+    const values = {
+      hidden: '0',
+      lucas: 'lucas',
+      lucasContainer: 'lucas-container',
+      lays: 'lays',
+      visible: '1'
+    }
+
+    const barsNames = ['lucas', 'lays']
+
     // click on the eye
-    views.forEach((view, pos) => {
-      view.addEventListener('click', () => {
+    views.forEach((eye, pos) => {
+      eye.addEventListener('click', () => {
         
         setTimeout(() => {
-          // Show person's menu
-          menus[pos].getAttribute('class').includes('vanished')
-          ? menus[pos].classList.remove('vanished')
-          : menus[pos].classList.add('vanished')
-
-          if (pos === 0) {
-            clickableArea.style.background = 'linear-gradient(-7deg, rgb(33, 66, 99), #333)'
-            document.body.style.background = 'linear-gradient(-7deg, #333, rgb(33, 66, 99), rgba(255, 70, 0, .7))'
-          } else {
-            clickableArea.style.background = 'linear-gradient(-7deg, rgb(133, 66, 99), #333)'
-            document.body.style.background = 'linear-gradient(-7deg, #333, rgb(133, 66, 99), rgba(255, 70, 0, .7))'
-          }
+          setScreenTransition([clickableArea, portfolioTitle], values.hidden)
           
-          // hide person's container that was not clicked
-          containers[pos === 1 ? 0 : 1].getAttribute('class').includes('vanished') 
-          ? containers[pos === 1 ? 0 : 1].classList.remove('vanished')
-          : containers[pos === 1 ? 0 : 1].classList.add('vanished')
+          setTimeout(() => {
 
-          containers[pos].getAttribute('id') === 'lucas-container'
-          ? personOnSpotlight = 'lucas'
-          : personOnSpotlight = 'lays'
+            personOnSpotlight = setPersonOnScreen(
+              containers[pos], values.lucasContainer, personOnSpotlight, values.lucas, values.lays
+            )
+            
+            // Paint the tag sheltering the current
+            transitionUserTheme(document.body, clickableArea, personOnSpotlight, peopleThemes)
+            
+            // Hide person's container that was not clicked
+            containers[pos === 1 ? 0 : 1].getAttribute('class').includes('vanished') 
+            ? containers[pos === 1 ? 0 : 1].classList.remove('vanished')
+            : containers[pos === 1 ? 0 : 1].classList.add('vanished')
 
-          view.textContent === '👁️‍🗨️' 
-          ? view.textContent = '↩' 
-          : view.textContent = '👁️‍🗨️'
-
-          view.textContent === '↩'
-          ? lucas.classList.remove('numb')
-          : lays.classList.remove('numb')
-
-          if (view.textContent === '👁️‍🗨️') {
-            clickableArea.style.background = stdContainerColor
-            document.body.style.background = stdBackgroundColor
-            lucas.classList.add('numb')
-            lays.classList.add('numb')
-          }
-        }, 500)
+            // Show person's menu (soft-skills, hard-skills, projects, about)
+            selectUserData(menus[pos])
+            
+            // Switch between eye (outside) and arrow (inside)
+            switchSymbol(eye, emojis.eye, emojis.returnArrow, emojis.eye)
+            
+            // Used to show person's image when selected
+            highlightImage(eye, emojis.returnArrow, [lucas, lays])
+            
+            // Mount index page with no portfolio chosen
+            returnIndexTemplate(eye, emojis.eye)
+            
+            setTimeout(() => {
+              // When certain eye is clicked: transition to the person's portfolio
+              setScreenTransition([clickableArea, portfolioTitle], values.visible)
+            }, 1500)
+          }, 1100)
+        }, 700)
         
       })
     })
@@ -456,26 +553,22 @@
     fields.forEach((field, pos) => {
       field.addEventListener('click', () => {
 
-        window.getComputedStyle(field).color === colors.white 
-        ? field.style.color = colors.yellow
-        : field.style.color = colors.white
+        highlightField(field, colors.white, colors.white, colors.yellow)
 
         setTimeout(() => {
           const newBar = createBar()
-          personOnSpotlight === 'lucas' ? progressBarLeft.appendChild(newBar) : progressBarRight.appendChild(newBar)
+          decideBarLocation(personOnSpotlight, bars, barsNames, newBar)
           const progressBarArray = createBarProgress()
-          personOnSpotlight === 'lucas' 
-          ? buildBarProgress(progressBarArray, newBar, progressBarLeft)
-          : buildBarProgress(progressBarArray, newBar, progressBarRight)
+          const newBarContainer = bars[barsNames.indexOf(personOnSpotlight)]
+          buildBarProgress(progressBarArray, newBar, newBarContainer)
           
           setTimeout(() => {
             !fieldAnswers[pos].getAttribute('class').includes('vanished')
             ? fieldAnswers[pos].classList.add('vanished')
             : fieldAnswers[pos].classList.remove('vanished')
-          }, 1500)
+          }, 2000)
         }, 1200)
 
-          
       })
     })
     
