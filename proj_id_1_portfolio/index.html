@@ -12,6 +12,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     a {
       color: white;
       text-shadow: 0 0 .2rem white;
@@ -33,12 +34,11 @@
       background: #222;
       border: rgb(222, 222, 25) solid 1.7px;
       border-radius: .2rem;
-      color: yellow;
+      color: rgb(200, 220, 50);
       list-style-position: inside;
       margin: 0 0 .3rem .5rem;
       padding: .3rem .7rem;
-      transition: linear 1s;
-      /* text-shadow: 0 0 .5rem yellow; */
+      text-align: left;
     }
 
     ul {
@@ -57,11 +57,21 @@
     .row {
       flex-flow: row wrap;
     }
+    .going-left {
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-align: right;
+    }
     .going-center {
       align-items: center;
       justify-content: center;
+      text-align: center;
     }
-
+    .going-right {
+      align-items: flex-end;
+      justify-content: flex-end;
+      text-align: right;
+    }
     .gap-sm {
       gap: .5rem;
     }
@@ -105,10 +115,11 @@
     }
 
     #portfolio-container #clickable-area {
-      background: linear-gradient(7deg, rgb(10, 10, 10), rgb(0, 99, 99), rgb(99, 99, 99));
+      /* background: linear-gradient(7deg, rgb(10, 10, 10), rgb(0, 99, 99), rgb(99, 99, 99)); */
+      background: linear-gradient(120deg, rgb(33, 66, 99) 0%, #333 50%, rgb(133, 66, 99) 51%, #333 100%);
       border-radius: .4rem;
-      padding: 1.5rem 0;
-      width: 40rem;
+      padding: 2.5rem 0 0 0;
+      width: 30rem;
       transition: linear .5s;
     }
 
@@ -148,8 +159,19 @@
       margin: .3rem;
       padding: 1rem;
       height: 4.5rem;
-      width: 7rem;
+      width: 8rem;
       transition: linear .5s;
+    }
+
+    .field-answer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 20rem;
+      background: rgba(33, 66, 99, .2);
+      padding: 1rem;
+      transition: linear 1s;
     }
 
     .field:hover {
@@ -209,6 +231,9 @@
       #portfolio-container #clickable-area {
         width: 30rem;
       }
+      .field-answer {
+        position: relative;
+      }
     }
     @media (max-width: 600px) {
       #portfolio-container #person-a, #portfolio-container #person-b {
@@ -237,7 +262,6 @@
       <h1 id="portfolio-title" class="mb">Portfólios</h1>
       
       <div id="clickable-area" class="flex row going-center gap-md">
-        
         <div id="lucas-container" class="container flex column going-center">
           <h3 class="person-name mb">Lucas Farias</h3>
           <img id="person-a" class="zoom-in smooth numb" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lucas.jpg" alt="imagem da pessoa Lucas">
@@ -254,10 +278,10 @@
             </div>
           </div>
 
-          <div id="progress-bar-left" class="bar-item mt"></div>
+          <div id="progress-bar-left" class="bar-item mb mt"></div>
 
           <div class="field-answer soft-skills vanished">
-            <ul class="flex row going-center">
+            <ul>
               <li>aprendizado contínuo</li>
               <li>criatividade</li>
               <li>curiosidade</li>
@@ -273,8 +297,8 @@
           </div>
           <div class="field-answer projects vanished">
             <ul>
-              <li>🔗 Rocket Rectangle (vanilla javascript): <a href="https://foguete-retangulo-jogo.vercel.app/" target="_blank"><span class="url-item">👁️</span></a></li>
-              <li>🔗 Pizzaria Pizzitalia (vanilla javascript + django): <a href="https://lucasprog.pythonanywhere.com/" target="_blank"><span class="url-item">👁️</span></a></li>
+              <li>🔗 Rocket Rectangle (vanilla js): <a href="https://foguete-retangulo-jogo.vercel.app/" target="_blank"><span class="url-item">👁️</span></a></li>
+              <li>🔗 Pizzaria Pizzitalia (vanilla js + django): <a href="https://lucasprog.pythonanywhere.com/" target="_blank"><span class="url-item">👁️</span></a></li>
             </ul>
           </div>
           <div class="field-answer about vanished">
@@ -283,15 +307,14 @@
               <li>🌍🏠 Teresina/PI</li>
               <li>👨🏻‍🎓📚 Letras Inglês</li>
               <li>👨🏻‍🎓📚 ADS (andamento)</li>
-              <li>💻 Desenvolvimento Front-end</li>
+              <li>💻 Dev. Front-end</li>
             </ul>
           </div>
           
         </div>
-
         <div id="lays-container" class="container flex column going-center">
           <h3 class="person-name mb">Lays Emanuelly</h3>
-          <img id="person-b" class="zoom-in smooth numb" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lays.png" alt="imagem da pessoa Lays">
+          <img id="person-b" class="zoom-in smooth numb" style="text-align: center;" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lays.png" alt="imagem da pessoa Lays">
           <p class="view mt mb field-female">👁️‍🗨️</p>
           
           <div id="lays-menu" class="menu vanished">
@@ -305,10 +328,10 @@
             </div>
           </div>
 
-          <div id="progress-bar-right" class="bar-item mt"></div>
+          <div id="progress-bar-right" class="bar-item mb mt"></div>
 
           <div class="field-answer soft-skills vanished">
-            <ul class="flex row going-center">
+            <ul>
               <li>inserir...</li>
             </ul>
           </div>
@@ -331,8 +354,8 @@
             </ul>
           </div>
         </div>
-
       </div>
+      
     </div>
   </main>
 
@@ -440,7 +463,13 @@
       }
     }
 
-    const highlightField = (htmlTag, certainValue, stdColor, highlightColor) => {
+    const highlight = (htmlForField, pos) => {
+      !htmlForField[pos].getAttribute('class').includes('vanished')
+      ? htmlForField[pos].classList.add('vanished')
+      : htmlForField[pos].classList.remove('vanished')
+    }
+
+    const highlightFieldText = (htmlTag, certainValue, stdColor, highlightColor) => {
       window.getComputedStyle(htmlTag).color === certainValue 
       ? htmlTag.style.color = highlightColor
       : htmlTag.style.color = stdColor
@@ -483,7 +512,7 @@
       laysBanner: 'linear-gradient(-7deg, rgb(133, 66, 99), #333)',
       laysBackground: 'linear-gradient(-7deg, #333, rgb(133, 66, 99), rgba(255, 70, 0, .7))',
       stdBackground: 'linear-gradient(7deg, rgb(0, 33, 99), rgb(0, 99, 99), rgb(33, 66, 99))',
-      stdContainerBackground: 'linear-gradient(7deg, rgb(10, 10, 10), rgb(0, 99, 99), rgb(99, 99, 99))'
+      stdContainerBackground: 'linear-gradient(120deg, rgb(33, 66, 99) 0%, #333 50%, rgb(133, 66, 99) 51%, #333 100%)'
     }
     
     const emojis = {
@@ -553,7 +582,7 @@
     fields.forEach((field, pos) => {
       field.addEventListener('click', () => {
 
-        highlightField(field, colors.white, colors.white, colors.yellow)
+        highlightFieldText(field, colors.white, colors.white, colors.yellow)
 
         setTimeout(() => {
           const newBar = createBar()
@@ -563,9 +592,7 @@
           buildBarProgress(progressBarArray, newBar, newBarContainer)
           
           setTimeout(() => {
-            !fieldAnswers[pos].getAttribute('class').includes('vanished')
-            ? fieldAnswers[pos].classList.add('vanished')
-            : fieldAnswers[pos].classList.remove('vanished')
+            highlight(fieldAnswers, pos)
           }, 2000)
         }, 1200)
 
