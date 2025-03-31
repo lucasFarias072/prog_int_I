@@ -13,6 +13,17 @@
       box-sizing: border-box;
     }
 
+    ::-webkit-scrollbar {
+      width: 1.5vw;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to top, rgb(0, 99, 99), #222);
+      border: white solid 1px;
+      border-radius: .5rem;
+      min-height: .5rem;
+    }
+    /* ::-webkit-scrollbar-track {} */
+
     a {
       color: white;
       text-shadow: 0 0 .2rem white;
@@ -29,8 +40,8 @@
       color: rgba(255, 255, 255, .5);
       text-shadow: 0 0 1rem black;
     }
-  
-    li {
+
+    li, .cls-tool-item {
       background: #222;
       border: rgb(222, 222, 25) solid 1.7px;
       border-radius: .2rem;
@@ -60,7 +71,7 @@
     .going-left {
       align-items: flex-start;
       justify-content: flex-start;
-      text-align: right;
+      text-align: left;
     }
     .going-center {
       align-items: center;
@@ -85,25 +96,98 @@
     .mb {
       margin-bottom: 1rem;
     }
-
     .mt {
       margin-top: 1rem;
     }
 
-    .numb {
+    .cls-bar {
+      height: 1rem;
+      width: 40%;
+
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 0 .2rem white;
+      text-align: center;
+    }
+
+    .cls-bar-within {
+      height: 1rem;
+      width: 0%;
+      
+      background: transparent;
+      border: transparent solid 1px;
+      border-radius: 1.5rem;
+    }
+
+    .cls-field-answer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 50vh;
+      width: 20rem;
+      
+      background: rgba(33, 66, 99, .2);
+      overflow-y: scroll;
+      padding: 1rem;
+      transition: linear 1s;
+    }
+
+    .cls-field {
+      border: #222 solid 1.5px;
+      border-radius: .2rem;
+      box-shadow: 0 0 .3rem #222;
+      cursor: pointer;
+      margin: .3rem;
+      padding: .6rem;
+      height: 4.5rem;
+      width: 8rem;
+    }
+
+    .cls-field:hover {
+      transform: scale(1.1);
+    }
+
+    .cls-numb {
       opacity: .5;
     }
 
-    .person-name {
+    .cls-person-name {
       color: white;
       text-shadow: 0 0 .2rem yellow;
-      /* color: white; */
-      /* text-shadow: 0 0 1rem rgb(0, 99, 99); */
     }
 
-    .url-item {
-      /* font-size: 1.3rem; */
-      width: 9rem;
+    .cls-smooth {
+      transition: all linear .3s;
+    }
+
+    .cls-tool-about {
+      font-size: .9rem;
+    }
+
+    .cls-tool {
+      color: white;
+      margin: .5rem;
+      padding: .3rem 2rem;
+    }
+
+    .cls-url {
+      font-size: 1.2rem;
+    }
+
+    .cls-vanished {
+      display: none;
+    }
+
+    .cls-view {
+      background: linear-gradient(rgb(33, 66, 99), #222);
+      border-radius: .5rem;
+      cursor: pointer;
+      font-size: 2rem;
+      padding: .5rem 3rem;
+    }
+
+    .cls-zoom-in:hover {
+      transform: scale(1.1);
     }
 
     #portfolio-container #portfolio-title {
@@ -135,103 +219,35 @@
       opacity: 1;
     }
 
-    .smooth {
-      transition: all linear .5s;
+    #progress-bar-left, #progress-bar-right {
+      width: 100%;
     }
 
-    .view {
-      background: linear-gradient(rgb(33, 66, 99), #222);
-      border-radius: .5rem;
-      cursor: pointer;
-      padding: .5rem 3rem;
-      font-size: 2rem;
-    }
-
-    .zoom-in:hover {
-      transform: scale(1.1);
-    }
-
-    .field {
-      border: #222 solid 1.5px;
-      border-radius: .2rem;
-      box-shadow: 0 0 .3rem #222;
-      cursor: pointer;
-      margin: .3rem;
-      padding: 1rem;
-      height: 4.5rem;
-      width: 8rem;
-      transition: linear .5s;
-    }
-
-    .field-answer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 20rem;
-      background: rgba(33, 66, 99, .2);
-      padding: 1rem;
-      transition: linear 1s;
-    }
-
-    .field:hover {
-      transform: scale(1.1);
-    }
-
-    .field-female {
+    .cls-field-female {
       background: linear-gradient(-7deg, rgb(133, 66, 99), #333);
       box-shadow: 0 0 .3rem #222;
       color: white;
     }
 
-    .field-female:hover {
+    .cls-field-female:hover {
       background: linear-gradient(-7deg, #333, rgb(133, 66, 99));
     }
 
-    .field-male {
+    .cls-field-male {
       background: linear-gradient(-7deg, rgb(33, 66, 99), #333);
       box-shadow: 0 0 .3rem #222;
       color: white;
     }
 
-    .field-male:hover {
+    .cls-field-male:hover {
       background: linear-gradient(-7deg, #333, rgb(33, 66, 99));
     }
 
-    .vanished {
-      display: none;
-    }
-
-    .shades {
-      opacity: 0;
-    }
-
-    #progress-bar-left, #progress-bar-right {
-      width: 100%;
-    }
-
-    .bar {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 0 .2rem white;
-      height: 1rem;
-      width: 40%;
-      text-align: center;
-    }
-
-    .bar-within {
-      background: transparent;
-      border: transparent solid 1px;
-      border-radius: 1.5rem;
-      height: 1rem;
-      width: 0%;
-    }
-
-    @media (max-width: 700px) {
+    @media (max-width: 1150px) {
       #portfolio-container #clickable-area {
         width: 30rem;
       }
-      .field-answer {
+      .cls-field-answer {
         position: relative;
       }
     }
@@ -253,7 +269,6 @@
         width: 5rem;
       }
     }
-    
   </style>
 </head>
 <body>
@@ -263,24 +278,26 @@
       
       <div id="clickable-area" class="flex row going-center gap-md">
         <div id="lucas-container" class="container flex column going-center">
-          <h3 class="person-name mb">Lucas Farias</h3>
-          <img id="person-a" class="zoom-in smooth numb" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lucas.jpg" alt="imagem da pessoa Lucas">
-          <p class="view mt mb field-male">👁️‍🗨️</p>
+          <h3 class="cls-person-name mb">Lucas Farias</h3>
+          <img id="person-a" class="cls-zoom-in cls-smooth cls-numb" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lucas.jpg" alt="imagem da pessoa Lucas">
+          <p class="cls-view mt mb cls-field-male">👁️‍🗨️</p>
 
-          <div id="lucas-menu" class="menu vanished">
+          <div id="lucas-menu" class="menu cls-vanished">
             <div class="flex row going-center gap-sm">
-              <p class="field field-male">soft-skills</p>
-              <p class="field field-male">hard-skills</p>
+              <p class="cls-field cls-field-male">soft-skills</p>
+              <p class="cls-field cls-field-male">hard-skills</p>
+              <p class="cls-field cls-field-male">projetos publicados</p>
             </div>
             <div class="flex row going-center gap-sm">
-              <p class="field field-male">projetos publicados</p>
-              <p class="field field-male">sobre</p>
+              <p class="cls-field cls-field-male">sobre</p>
+              <p class="cls-field cls-field-male">hobbies</p>
+              <p class="cls-field cls-field-male">ferramentas</p>
             </div>
           </div>
 
           <div id="progress-bar-left" class="bar-item mb mt"></div>
 
-          <div class="field-answer soft-skills vanished">
+          <div class="cls-field-answer soft-skills cls-vanished">
             <ul>
               <li>aprendizado contínuo</li>
               <li>criatividade</li>
@@ -289,19 +306,20 @@
               <li>resiliência</li>
             </ul>
           </div>
-          <div class="field-answer hard-skills vanished">
+          <div class="cls-field-answer hard-skills cls-vanished">
             <ul>
               <li>front-end: html, css, js, git/github, react</li>
               <li>back-end: django, express, consumo APIs</li>
             </ul>
           </div>
-          <div class="field-answer projects vanished">
+          <div class="cls-field-answer projects cls-vanished">
             <ul>
-              <li>🔗 Rocket Rectangle (vanilla js): <a href="https://foguete-retangulo-jogo.vercel.app/" target="_blank"><span class="url-item">👁️</span></a></li>
-              <li>🔗 Pizzaria Pizzitalia (vanilla js + django): <a href="https://lucasprog.pythonanywhere.com/" target="_blank"><span class="url-item">👁️</span></a></li>
+              <li>🔗 Currículo: (vanilla js) <a class="cls-url" href="https://curriculo-ti-lucas-far.vercel.app/" target="_blank">👁️</a></li>
+              <li>🔗 Rocket Rectangle (vanilla js): <a class="cls-url" href="https://foguete-retangulo-jogo.vercel.app/" target="_blank">👁️</a></li>
+              <li>🔗 Pizzaria Pizzitalia (vanilla js + django): <a class="cls-url" href="https://lucasprog.pythonanywhere.com/" target="_blank">👁️</a></li>
             </ul>
           </div>
-          <div class="field-answer about vanished">
+          <div class="cls-field-answer about cls-vanished">
             <ul>
               <li>📌🌍 Brasileiro</li>
               <li>🌍🏠 Teresina/PI</li>
@@ -310,49 +328,130 @@
               <li>💻 Dev. Front-end</li>
             </ul>
           </div>
+          <div class="cls-field-answer hobbies cls-vanished">
+            <ul>
+              <li>andar de bicicleta</li>
+              <li>assistir animes antigos</li>
+              <li>explicar coisas pra mim mesmo e pra pessoas imaginárias 😂</li>
+              <li>falar sozinho 🤣</li>
+              <li>fingir que estou gravando um vídeo pro Youtube</li>
+              <li>inventar projetos de programação do nada</li>
+              <li>praticar badmintom</li>
+              <li>praticar tênis</li>
+            </ul>
+          </div>
+          <div class="cls-field-answer tools cls-vanished">
+            <div class="flex row going-right cls-tool-item">
+              <span class="cls-tool">Claude IA
+                <a class="cls-url" href="https://claude.ai/" target="_blank">👁️</a>
+              </span>
+              <div class="flex column going-left">
+                <span class="cls-tool-about">
+                  resolução de pequenas dúvidas de programação (excelente nesse contexto), direcionar 
+                  estudos de assuntos de TI
+                </span>
+              </div>
+            </div>
+
+            <div class="flex row going-right cls-tool-item">
+              <span class="cls-tool">W3 Schools
+                <a class="cls-url" href="https://www.w3schools.com/" target="_blank">👁️</a>
+              </span>
+              <div class="flex column going-left">
+                <span class="cls-tool-about">
+                  diversos registros voltados ao desenvolvimento web, com tutoriais com exemplos 
+                  práticos e robustos para HTML, CSS, Javascript e programação em geral
+                </span>
+              </div>
+            </div>
+
+            <div class="flex row going-right cls-tool-item">
+              <span class="cls-tool">Udemy
+                <a class="cls-url" href="https://www.udemy.com/" target="_blank">👁️</a>
+              </span>
+                <div class="flex column going-left">
+                  <span class="cls-tool-about">
+                    cursos acessíveis para treinar coisas específicas que você quer aprender, de uma 
+                    forma mais concentrada
+                  </span>
+                </div>
+            </div>
+
+            <div class="flex row going-right cls-tool-item">
+              <span class="cls-tool">Youtube
+                <a class="cls-url" href="https://youtube.com/" target="_blank">👁️</a>
+              </span>
+                <div class="flex column going-left">
+                  <span class="cls-tool-about">
+                    tirar dúvidas gerais e buscar tutoriais
+                  </span>
+                </div>
+            </div>
+          </div>
           
         </div>
+
         <div id="lays-container" class="container flex column going-center">
-          <h3 class="person-name mb">Lays Emanuelly</h3>
-          <img id="person-b" class="zoom-in smooth numb" style="text-align: center;" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lays.png" alt="imagem da pessoa Lays">
-          <p class="view mt mb field-female">👁️‍🗨️</p>
+          <h3 class="cls-person-name mb">Lays Emanuelly</h3>
+          <img id="person-b" class="cls-zoom-in cls-smooth cls-numb" style="text-align: center;" src="https://raw.githubusercontent.com/lucasFarias072/prog_int_I/refs/heads/main/proj_id_1_portfolio/assets/lays.png" alt="imagem da pessoa Lays">
+          <p class="cls-view mt mb cls-field-female">👁️‍🗨️</p>
           
-          <div id="lays-menu" class="menu vanished">
+          <div id="lays-menu" class="menu cls-vanished">
             <div class="flex row going-center gap-sm">
-              <p class="field field-female">soft-skills</p>
-              <p class="field field-female">hard-skills</p>
+              <p class="cls-field cls-field-female">soft-skills</p>
+              <p class="cls-field cls-field-female">hard-skills</p>
+              <p class="cls-field cls-field-female">projetos publicados</p>
             </div>
             <div class="flex row going-center gap-sm">
-              <p class="field field-female">projetos publicados</p>
-              <p class="field field-female">sobre</p>
+              <p class="cls-field cls-field-female">sobre</p>
+              <p class="cls-field cls-field-female">hobbies</p>
+              <p class="cls-field cls-field-female">ferramentas</p>
             </div>
           </div>
 
           <div id="progress-bar-right" class="bar-item mb mt"></div>
 
-          <div class="field-answer soft-skills vanished">
+          <div class="cls-field-answer soft-skills cls-vanished">
             <ul>
-              <li>inserir...</li>
+              <li>inserir soft-skill...</li>
             </ul>
           </div>
-          <div class="field-answer hard-skills vanished">
+          <div class="cls-field-answer hard-skills cls-vanished">
             <ul>
               <li>front-end: ...</li>
               <li>back-end: ...</li>
             </ul>
           </div>
-          <div class="field-answer projects vanished">
+          <div class="cls-field-answer projects cls-vanished">
             <ul>
-              <li>🔗 Nome: <a href="#" target="_blank"><span class="url-item">👁️</span></a></li>
+              <li>🔗 Nome do Projeto: <a class="cls-url" href="#" target="_blank">👁️</a></li>
               </ul>
           </div>
-          <div class="field-answer about vanished">
+          <div class="cls-field-answer about cls-vanished">
             <ul>
               <li>📌🌍 Brasileiro</li>
               <li>🌍🏠 Teresina/PI</li>
               <li>👨🏻‍🎓📚 ...</li>
             </ul>
           </div>
+          <div class="cls-field-answer hobbies cls-vanished">
+            <ul>
+              <li>inserir hobby...</li>
+            </ul>
+          </div>
+          <div class="cls-field-answer tools cls-vanished">
+            <div class="flex row going-right cls-tool-item">
+              <span class="cls-tool">Nome da ferramenta
+                <a class="cls-url" href="#" target="_blank">👁️</a>
+              </span>
+              <div class="flex column going-left">
+                <span class="cls-tool-about">
+                  descrição da ferramenta
+                </span>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
       
@@ -381,8 +480,8 @@
     const createBar = () => {
       const bar = document.createElement('div')
       const barWithin = document.createElement('p')
-      bar.classList.add('bar')
-      barWithin.classList.add('bar-within')
+      bar.classList.add('cls-bar')
+      barWithin.classList.add('cls-bar-within')
       bar.appendChild(barWithin)
       return bar
     }
@@ -427,9 +526,9 @@
     }
 
     const selectUserData = (userHtmlTag) => {
-      userHtmlTag.getAttribute('class').includes('vanished')
-      ? userHtmlTag.classList.remove('vanished')
-      : userHtmlTag.classList.add('vanished')
+      userHtmlTag.getAttribute('class').includes('cls-vanished')
+      ? userHtmlTag.classList.remove('cls-vanished')
+      : userHtmlTag.classList.add('cls-vanished')
     }
 
     const transitionUserTheme = (fatherEl, childEl, person, themes) => {
@@ -458,15 +557,15 @@
     const highlightImage = (htmlTriggerTag, certainValue, tagsGroup) => {
       if (htmlTriggerTag.textContent === certainValue) {
         for(let el of tagsGroup) {
-          el.classList.remove('numb')
+          el.classList.remove('cls-numb')
         }
       }
     }
 
     const highlight = (htmlForField, pos) => {
-      !htmlForField[pos].getAttribute('class').includes('vanished')
-      ? htmlForField[pos].classList.add('vanished')
-      : htmlForField[pos].classList.remove('vanished')
+      !htmlForField[pos].getAttribute('class').includes('cls-vanished')
+      ? htmlForField[pos].classList.add('cls-vanished')
+      : htmlForField[pos].classList.remove('cls-vanished')
     }
 
     const highlightFieldText = (htmlTag, certainValue, stdColor, highlightColor) => {
@@ -483,18 +582,18 @@
       if (htmlTriggerTag.textContent === certainValue) {
         clickableArea.style.background = colors.stdContainerBackground
         document.body.style.background = colors.stdBackground
-        lucas.classList.add('numb')
-        lays.classList.add('numb')
+        lucas.classList.add('cls-numb')
+        lays.classList.add('cls-numb')
       }
     }
 
     const containers = [...document.querySelectorAll('.container')]
-    const views = [...document.querySelectorAll('.view')]
+    const views = [...document.querySelectorAll('.cls-view')]
     const menus = [...document.querySelectorAll('.menu')]
     const lucasMenu = document.getElementById('lucas-menu')
     const laysMenu = document.getElementById('lays-menu')
-    const fields = [...document.querySelectorAll('.field')]
-    const fieldAnswers = [...document.querySelectorAll('.field-answer')]
+    const fields = [...document.querySelectorAll('.cls-field')]
+    const fieldAnswers = [...document.querySelectorAll('.cls-field-answer')]
     const bars = [...document.querySelectorAll('.bar-item')]
 
     const portfolioTitle = document.getElementById('portfolio-title')
@@ -552,9 +651,9 @@
             transitionUserTheme(document.body, clickableArea, personOnSpotlight, peopleThemes)
             
             // Hide person's container that was not clicked
-            containers[pos === 1 ? 0 : 1].getAttribute('class').includes('vanished') 
-            ? containers[pos === 1 ? 0 : 1].classList.remove('vanished')
-            : containers[pos === 1 ? 0 : 1].classList.add('vanished')
+            containers[pos === 1 ? 0 : 1].getAttribute('class').includes('cls-vanished') 
+            ? containers[pos === 1 ? 0 : 1].classList.remove('cls-vanished')
+            : containers[pos === 1 ? 0 : 1].classList.add('cls-vanished')
 
             // Show person's menu (soft-skills, hard-skills, projects, about)
             selectUserData(menus[pos])
